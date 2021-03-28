@@ -3,18 +3,27 @@ const DATA_CACHE_NAME = "data-cache-v1";
 
 const FILES_TO_CACHE = [
   '/',
-  'index.html',
-  'styles.css',
-  'index.js',
-  'db.js',
-  'icons/icon-192x192.png',
-  'icons/icon-512x512.png',
-  'manifest.webmanifest',
+  '/index.html',
+  '/styles.css',
+  '/index.js',
+  '/db.js',
+  '/dist/bundle.js',
+  // '/dist/icon_72x72.png',
+  // '/dist/icon_96x96.png',
+  // '/dist/icon_128x128.png',
+  // '/dist/icon_144x144.png',
+  // '/dist/icon_152x152.png',
+  // '/dist/icon_192x192.png',
+  // '/dist/icon_384x384.png',
+  // '/dist/icon_512x512.png',
+  // '/dist/icon-192x192.png',
+  // '/dist/icon-512x512.png',
+  '/dist/manifest.json',
 ];
 
 // install
 self.addEventListener("install", function (evt) {
-  // pre cache image data
+  // pre cache transaction data
   evt.waitUntil(
     caches.open(DATA_CACHE_NAME).then((cache) => cache.add("/api/transaction"))
   );
