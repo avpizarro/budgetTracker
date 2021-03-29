@@ -26,11 +26,11 @@ const config = {
   },
   plugins: [
     new WebpackPwaManifest({
-      filename: "manifest.json",
-      inject: false,
+      filename: 'manifest.json',
       fingerprints: false,
       name: 'Budget Tracker',
       short_name: 'Budget',
+      publicPath: './',
       description: 'An application that allows you to keep track of your finances.',
       background_color: '#ffffff',
       theme_color: '#ffffff',
@@ -38,8 +38,9 @@ const config = {
       display: "standalone",
       icons: [
         {
-          src: path.resolve(__dirname,"public/icons/icon-512x512.png"),
+          src: path.resolve(__dirname,'public/icons/icon-512x512.png'),
           size: [72, 96, 128, 144, 152, 192, 384, 512],
+          destination: path.join('assets','icons'),
         },
       ],
     }),
